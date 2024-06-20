@@ -1,16 +1,18 @@
 ---
-
+import Layout from "../layouts/layout.astro";
+import Header from "../components/sections/header.astro";
+import Boards from "../components/sections/boards.astro";
+import Parts from "../components/sections/parts.astro";
+import Apparel from "../components/sections/apparel.astro";
+import Tricks from "../components/sections/tricks.astro";
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro Hi</h1>
-	</body>
-</html>
+<Layout title="Stakeboarding | Home">
+	<main>
+		<Header />
+		<Boards />
+		<Parts />
+		<Apparel />
+		<Tricks />
+	</main>
+</Layout>

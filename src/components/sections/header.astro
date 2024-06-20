@@ -1,0 +1,21 @@
+<header>
+    <div
+        class="flex h-[100vh] items-center justify-center bg-slate-800 text-slate-300"
+    >
+        <h1 class="font-skateHeading -translate-y-5 text-9xl opacity-0">
+            Skateboarding
+        </h1>
+    </div>
+</header>
+
+<script>
+    import { inView, animate } from "motion";
+
+    inView("header", ({ target }) => {
+        animate(
+            target.querySelector("h1")!,
+            { opacity: 1, transform: "none" },
+            { delay: 0.2, duration: 1, easing: "ease-in-out" },
+        );
+    });
+</script>

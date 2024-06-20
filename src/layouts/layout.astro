@@ -1,0 +1,21 @@
+---
+import "../css/style.css";
+import Navigation from "../components/core/navigation.astro";
+import Footer from "../components/core/footer.astro";
+interface Props {
+    title: string;
+}
+const { title } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+    <head>
+        <title>{title}</title>
+    </head>
+    <body>
+        <Navigation />
+        <slot />
+        <Footer />
+    </body>
+</html>

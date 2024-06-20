@@ -1,0 +1,25 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+    font-family: "Anton";
+    src: url(/public/fonts/Anton-Regular.ttf);
+}
+
+@font-face {
+    font-family: "ROUND8-FOUR";
+    src: url(/public/fonts/ROUND8-FOUR.otf);
+}
+
+#customDesignLeft {
+   clip-path: polygon(25% 0%, 100% 0%, 75% 100%, 0% 100%); 
+}
+
+#customDesignCenter {
+    clip-path: polygon(25% 0%, 75% 0%, 100% 100%, 0% 100%); 
+ }
+
+ #customDesignRight {
+    clip-path: polygon(0% 0%, 75% 0%, 100% 100%, 25% 100%);
+ }
