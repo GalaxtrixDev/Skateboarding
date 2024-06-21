@@ -1,47 +1,80 @@
-<section class="py-32 bg-slate-700">
+<section class="bg-slate-700 py-32">
     <div class="container">
         <div
-            class="flex flex-col items-center gap-10  text-slate-300" id="boards"
+            class="flex flex-col items-center gap-10 text-slate-300"
+            id="boards"
         >
             <div>
-                <h2 class="-translate-y-5 font-skateHeading text-5xl opacity-0">
+                <h2
+                    id="boardsTitle"
+                    class="-translate-y-10 font-skateHeading text-5xl uppercase opacity-0"
+                >
                     Boards
                 </h2>
             </div>
             <div class="flex">
                 <img
                     src="/images/SkateboardingImage1.jpg"
-                    id="customDesignLeft"
-                    class="w-96 -translate-y-5 opacity-0"
+                    id="boardImage"
+                    class="customDesignLeft aspect-square h-96 w-auto -translate-x-10 object-cover opacity-0"
                 />
                 <img
                     src="/images/SkateboardingImage1.jpg"
-                    id="customDesignCenter"
-                    class="w-96 -translate-y-5 opacity-0"
+                    id="boardImage"
+                    class="customDesignCenter aspect-square h-96 w-auto translate-y-10 object-cover opacity-0"
                 />
                 <img
                     src="/images/SkateboardingImage1.jpg"
-                    id="customDesignRight"
-                    class="w-96 -translate-y-5 opacity-0"
+                    id="boardImage"
+                    class="customDesignRight aspect-square h-96 w-auto translate-x-10 object-cover opacity-0"
                 />
             </div>
         </div>
     </div>
 </section>
 
-<script>
-    import { inView, animate } from "motion";
+<style>
+    .customDesignLeft {
+        clip-path: polygon(
+            100% 0%,
+            75% 50%,
+            100% 100%,
+            25% 100%,
+            0% 50%,
+            25% 0%
+        );
+    }
 
-    inView("#boards", ({ target }) => {
-        animate(
-            target.querySelector("h2")!,
-            { opacity: 1, transform: "none" },
-            { delay: 1, duration: 1, easing: "ease-in-out" },
+    .customDesignCenter {
+        clip-path: polygon(
+            25% 0%,
+            75% 0%,
+            100% 50%,
+            75% 100%,
+            25% 100%,
+            0% 50%
         );
-        animate(
-            target.querySelectorAll("img")!,
-            { opacity: 1, transform: "none" },
-            { delay: 1, duration: 1, easing: "ease-in-out" },
-        );
+    }
+
+    .customDesignRight {
+        clip-path: polygon(75% 0%, 100% 50%, 75% 100%, 0% 100%, 25% 50%, 0% 0%);
+    }
+</style>
+
+<script>
+    import { inView, animate, timeline, stagger } from "motion";
+
+    inView("#boards", () => {
+        const title = document.querySelector("#boardsTitle");
+        const boardImages = document.querySelectorAll("#boardImage");
+        const staggeredAnim = [
+            [title, { transform: "none", opacity: 1 }, { duration: 0.5 }],
+            [
+                boardImages,
+                { transform: "none", opacity: 1 },
+                { delay: stagger(0.3), duration: 1 },
+            ],
+        ];
+        timeline(staggeredAnim, { delay: 1 });
     });
 </script>
