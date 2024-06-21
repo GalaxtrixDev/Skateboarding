@@ -4,12 +4,12 @@
 
 @font-face {
     font-family: "Anton";
-    src: url(/public/fonts/Anton-Regular.ttf);
+    src: url(/fonts/Anton-Regular.ttf);
 }
 
 @font-face {
     font-family: "ROUND8-FOUR";
-    src: url(/public/fonts/ROUND8-FOUR.otf);
+    src: url(/fonts/ROUND8-FOUR.otf);
 }
 
 #customDesignLeft {

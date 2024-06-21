@@ -6,6 +6,9 @@ export default {
 			fontFamily: {
 				skateHeading: ["Anton"],
 			},
+			height: {
+				screen: ["100vh /* fallback for Opera, IE and etc. */", "100svh"],
+			},
 		},
 	},
 	plugins: [],
